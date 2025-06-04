@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'middleman', '~> 4.5'
 gem 'middleman-tailwind', git: "https://github.com/bendangelo/middleman-tailwind.git"
+gem "middleman-blog", "~> 4.0"
 
 gem "slim"
 gem 'terser', '~> 1.1'

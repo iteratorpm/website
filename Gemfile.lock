@@ -1,14 +1,10 @@
 GIT
   remote: https://github.com/bendangelo/middleman-tailwind.git
-  revision: b1227c0e0c18c1d6ce8f5cdff917b84875f5d0cf
+  revision: a3dd9ddb21c82a6f5e571710cff496d68f76fcd2
   specs:
     middleman-tailwind (2.0.0)
-      iconv
       middleman-core (>= 4.0.0)
-      mutex_m
-      nkf
       tailwindcss-ruby (>= 4.0.0)
-      watchman
 
 GEM
   remote: https://rubygems.org/
@@ -64,19 +60,20 @@ GEM
     hashie (5.0.0)
     i18n (1.14.7)
       concurrent-ruby (~> 1.0)
-    iconv (1.1.0)
     kramdown (2.5.1)
       rexml (>= 3.3.9)
     listen (3.9.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
     logger (1.7.0)
-    mechanize (1.0.0)
-      nokogiri (>= 1.2.1)
     memoist (0.16.2)
     middleman (4.6.0)
       middleman-cli (= 4.6.0)
       middleman-core (= 4.6.0)
+    middleman-blog (4.1.0)
+      addressable (~> 2.3)
+      middleman-core (>= 4.0.0)
+      tzinfo (>= 0.3.0)
     middleman-cli (4.6.0)
       thor (>= 0.17.0, < 1.3.0)
     middleman-core (4.6.0)
@@ -107,29 +104,7 @@ GEM
       toml
       uglifier (>= 3, < 5)
       webrick
-    mini_portile2 (2.8.9)
     minitest (5.25.5)
-    mutex_m (0.3.0)
-    nkf (0.2.0)
-    nokogiri (1.18.8)
-      mini_portile2 (~> 2.8.2)
-      racc (~> 1.4)
-    nokogiri (1.18.8-aarch64-linux-gnu)
-      racc (~> 1.4)
-    nokogiri (1.18.8-aarch64-linux-musl)
-      racc (~> 1.4)
-    nokogiri (1.18.8-arm-linux-gnu)
-      racc (~> 1.4)
-    nokogiri (1.18.8-arm-linux-musl)
-      racc (~> 1.4)
-    nokogiri (1.18.8-arm64-darwin)
-      racc (~> 1.4)
-    nokogiri (1.18.8-x86_64-darwin)
-      racc (~> 1.4)
-    nokogiri (1.18.8-x86_64-linux-gnu)
-      racc (~> 1.4)
-    nokogiri (1.18.8-x86_64-linux-musl)
-      racc (~> 1.4)
     padrino-helpers (0.15.3)
       i18n (>= 0.6.7, < 2)
       padrino-support (= 0.15.3)
@@ -138,7 +113,6 @@ GEM
     parallel (1.27.0)
     parslet (2.0.0)
     public_suffix (6.0.2)
-    racc (1.8.1)
     rack (3.1.15)
     rackup (2.2.1)
       rack (>= 3)
@@ -172,8 +146,6 @@ GEM
     uglifier (4.2.1)
       execjs (>= 0.3.0, < 3)
     uri (1.0.3)
-    watchman (0.1.1)
-      mechanize (= 1.0.0)
     webrick (1.9.1)
 
 PLATFORMS
@@ -190,6 +162,7 @@ PLATFORMS
 
 DEPENDENCIES
   middleman (~> 4.5)
+  middleman-blog (~> 4.0)
   middleman-tailwind!
   slim
   terser (~> 1.1)

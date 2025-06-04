@@ -23,4 +23,8 @@ html lang="en"
       | }
 
   body.bg-white
+    = partial 'partials/header'
+
     == yield
+
+    = partial 'partials/footer'
