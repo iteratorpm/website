@@ -1,0 +1,32 @@
+section.max-w-7xl.mx-auto.px-4.sm:px-6.lg:px-8.py-20
+  .text-center
+
+    / Main Heading
+    h1.text-6xl.md:text-7xl.font-bold.text-black.mb-6.leading-tight
+      | Modern Agile
+      br
+      span.relative
+        | Project Management
+        .absolute.-bottom-4.left-1/2.transform.-translate-x-1/2
+          svg[width="200" height="20" viewBox="0 0 200 20" class="text-black"]
+            path[d="M10 15 Q100 5 190 15" stroke="currentColor" stroke-width="4" fill="none"]
+
+    / Subtitle
+    p.text-xl.text-gray-700.mb-4.max-w-2xl.mx-auto
+      | Based on the proven methodology of Pivotal Tracker, Iterator brings you
+      |< streamlined story-driven development with a modern twist.
+
+    / Fun element
+    .flex.justify-center.items-center.space-x-4.mb-12
+      .stick-figure
+      svg[width="60" height="20" viewBox="0 0 60 20" class="text-black"]
+        path[d="M5 10 L50 10 M45 5 L50 10 L45 15" stroke="currentColor" stroke-width="3" fill="none"]
+      .w-12.h-12.bg-yellow-300.border-4.border-black.flex.items-center.justify-center.transform.rotate-12
+        span.text-xl ✓
+
+    / CTA Buttons
+    .flex.flex-col.sm:flex-row.gap-4.justify-center.items-center
+      a.bg-black.text-white.px-8.py-4.border-4.border-black.hover:bg-white.hover:text-black.transition-all.font-bold.text-lg.arrow-right href="/signup"
+        | Get Started
+      a.bg-white.text-black.px-8.py-4.border-4.border-black.hover:bg-gray-100.transition-all.font-bold.text-lg href="/demo"
+        | View Demo

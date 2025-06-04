@@ -1,0 +1,32 @@
+header.border-b-4.border-black.bg-white
+  nav.max-w-7xl.mx-auto.px-4.sm:px-6.lg:px-8
+    .flex.justify-between.items-center.py-4
+
+      / Logo and Brand
+      .flex.items-center.space-x-3
+        .w-10.h-10.bg-black.border-4.border-black.flex.items-center.justify-center
+          .w-6.h-6.bg-white.transform.rotate-45
+        span.text-2xl.font-bold.text-black Iterator
+
+      / Navigation Links
+      .hidden.md:flex.items-center.space-x-8
+        a.text-black.hover:text-gray-600.font-medium.transition-colors href="/features" Features
+        a.text-black.hover:text-gray-600.font-medium.transition-colors href="/blog" Blog
+        a.text-black.hover:text-gray-600.font-medium.transition-colors href="/docs" Docs
+        a.text-black.hover:text-gray-600.font-medium.transition-colors href="/pricing" Pricing
+        a.text-black.hover:text-gray-600.font-medium.transition-colors href="/contact" Contact
+
+      / Right side actions
+      .flex.items-center.space-x-4
+        a.text-black.hover:text-gray-600.transition-colors href="https://github.com/iterator-pm/iterator" target="_blank" rel="noopener"
+          svg.w-6.h-6 fill="currentColor" viewBox="0 0 24 24"
+            path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387..."
+        a.text-black.hover:text-gray-600.font-medium.transition-colors href="/login" Login
+        a.bg-black.text-white.px-6.py-2.border-4.border-black.hover:bg-white.hover:text-black.transition-all.font-medium href="/signup"
+          | Sign Up
+
+      / Mobile menu button
+      .md:hidden
+        button.text-black.hover:text-gray-600
+          svg.w-6.h-6 fill="none" stroke="currentColor" viewBox="0 0 24 24"
+            path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"

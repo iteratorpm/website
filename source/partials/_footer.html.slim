@@ -1,0 +1,63 @@
+footer.bg-black.text-white.py-16
+  .max-w-7xl.mx-auto.px-4.sm:px-6.lg:px-8
+    .grid.grid-cols-1.md:grid-cols-4.gap-8
+
+      / Brand Column
+      .md:col-span-1
+        .flex.items-center.space-x-3.mb-6
+          .w-8.h-8.bg-white.border-2.border-white.flex.items-center.justify-center
+            .w-4.h-4.bg-black.transform.rotate-45
+          span.text-xl.font-bold Iterator
+        p.text-gray-400.text-sm.mb-6
+          | Modern agile project management inspired by Pivotal Tracker.
+        .flex.space-x-4
+          a.text-gray-400.hover:text-white.transition-colors href="https://github.com/iterator-pm/iterator"
+            svg.w-5.h-5 fill="currentColor" viewBox="0 0 24 24"
+              path d="M12 0c-6.626..."
+          a.text-gray-400.hover:text-white.transition-colors href="https://discuss.iterator.pm"
+            svg.w-5.h-5 fill="currentColor" viewBox="0 0 24 24"
+              path d="M20.317 4.37..."
+          a.text-gray-400.hover:text-white.transition-colors href="https://twitter.com/iterator_pm"
+            svg.w-5.h-5 fill="currentColor" viewBox="0 0 24 24"
+              path d="M23.953 4.57..."
+
+      / Product Column
+      div
+        h4.font-bold.text-lg.mb-4 Product
+        ul.space-y-3.text-gray-400
+          - ["features", "guide", "changelog", "integrations", "download", "pricing", "status"].each do |item|
+            li
+              a.hover:text-white.transition-colors href="/#{item}" = item.capitalize
+
+      / Community Column
+      div
+        h4.font-bold.text-lg.mb-4 Community
+        ul.space-y-3.text-gray-400
+          li
+            a.hover:text-white.transition-colors href="/contact" Contact Us
+          li
+            a.hover:text-white.transition-colors href="https://github.com/iterator-pm/iterator" GitHub
+          li
+            a.hover:text-white.transition-colors href="https://discuss.iterator.pm" Discuss
+          li
+            a.hover:text-white.transition-colors href="https://twitter.com/iterator_pm" Twitter
+
+      / Company Column
+      div
+        h4.font-bold.text-lg.mb-4 Company
+        ul.space-y-3.text-gray-400
+          - ["about", "privacy", "terms"].each do |page|
+            li
+              a.hover:text-white.transition-colors href="/#{page}" = page == "terms" ? "Terms of Use" : page.capitalize
+
+    / Bottom section
+    .border-t.border-gray-800.mt-12.pt-8
+      .flex.flex-col.md:flex-row.justify-between.items-center
+        .text-gray-400.text-sm.mb-4.md:mb-0
+          | © 2025 Iterator. Built with ❤️ for agile teams.
+        .flex.items-center.space-x-4
+          .stick-figure style="width: 24px; height: 24px; filter: invert(1);"
+          svg width="40" height="20" viewBox="0 0 40 20" class="text-white"
+            path d="M5 10 L30 10 M25 5 L30 10 L25 15" stroke="currentColor" stroke-width="2" fill="none"
+          .w-6.h-6.bg-yellow-400.border-2.border-white.flex.items-center.justify-center.transform.rotate-12
+            span.text-black.text-xs ✓

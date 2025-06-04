@@ -1,0 +1,68 @@
+section.bg-gray-50.border-t-4.border-b-4.border-black.py-20
+  .max-w-7xl.mx-auto.px-4.sm:px-6.lg:px-8
+    .text-center.mb-16
+      h2.text-5xl.font-bold.text-black.mb-4
+        | Simple Setup
+        span.text-green-500 .
+      p.text-xl.text-gray-600.max-w-2xl.mx-auto
+        | Get started in minutes, not days. Choose cloud or self-hosted.
+      .mt-8.flex.justify-center
+        svg.text-black width="60" height="40" viewBox="0 0 60 40"
+          path stroke="currentColor" stroke-width="4" fill="none" d="M30 5 L30 30 M25 25 L30 30 L35 25"
+
+    .grid.grid-cols-1.lg:grid-cols-2.gap-12
+      // Cloud Option
+      .bg-white.border-4.border-black.p-8.relative
+        .absolute.-top-4.-right-4.w-16.h-12.bg-blue-200.border-4.border-black.rounded-full
+        .absolute.-top-2.-right-8.w-8.h-8.bg-blue-200.border-4.border-black.rounded-full
+        .text-center
+          .w-20.h-20.bg-blue-100.border-4.border-black.mx-auto.mb-6.flex.items-center.justify-center
+            svg.w-10.h-10.text-black fill="none" stroke="currentColor" viewBox="0 0 24 24"
+              path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10"
+          h3.text-2xl.font-bold.mb-4 Sign Up for Cloud
+          p.text-gray-600.mb-6
+            | Start managing your projects immediately with our hosted solution.
+          .bg-gray-100.border-2.border-black.p-4.mb-6
+            .flex.items-center.justify-center.space-x-4.mb-4
+              .stick-figure
+              svg.text-green-600 width="40" height="20" viewBox="0 0 40 20"
+                path stroke="currentColor" stroke-width="3" fill="none" d="M5 10 L30 10 M25 5 L30 10 L25 15"
+              .w-8.h-8.bg-green-300.border-2.border-black.flex.items-center.justify-center
+                span.text-sm ✓
+            ul.text-sm.text-gray-700.space-y-2
+              li • Free 30-day trial
+              li • No credit card required
+              li • SSL encryption included
+              li • Automatic backups
+          a.bg-blue-500.text-white.px-8.py-4.border-4.border-black.hover:bg-blue-600.transition-all.font-bold.text-lg.inline-block.arrow-right href="/signup"
+            | Start Free Trial
+
+      // Self-Host Option
+      .bg-white.border-4.border-black.p-8.relative
+        .absolute.-top-4.-left-4.w-12.h-16.bg-gray-300.border-4.border-black
+        .absolute.-top-2.-left-2.w-8.h-12.bg-gray-400.border-4.border-black
+        .text-center
+          .w-20.h-20.bg-gray-100.border-4.border-black.mx-auto.mb-6.flex.items-center.justify-center
+            svg.w-10.h-10.text-black fill="none" stroke="currentColor" viewBox="0 0 24 24"
+              path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2"
+          h3.text-2xl.font-bold.mb-4 Self Host
+          p.text-gray-600.mb-6
+            | Run Iterator on your own infrastructure with full control and privacy.
+          .bg-gray-900.text-green-400.border-2.border-black.p-4.mb-6.font-mono.text-left.text-sm
+            .mb-2.text-gray-400 # One command deployment
+            .text-green-300 $ docker run -d -p 3000:3000 iterator/iterator:latest
+          .bg-gray-100.border-2.border-black.p-4.mb-6
+            .flex.items-center.justify-center.space-x-4.mb-4
+              .w-8.h-8.bg-gray-300.border-2.border-black.flex.items-center.justify-center
+                span.text-sm 🔒
+              svg.text-purple-600 width="40" height="20" viewBox="0 0 40 20"
+                path stroke="currentColor" stroke-width="3" fill="none" d="M5 10 L30 10 M25 5 L30 10 L25 15"
+              .w-8.h-8.bg-purple-300.border-2.border-black.flex.items-center.justify-center
+                span.text-sm ⚡
+            ul.text-sm.text-gray-700.space-y-2
+              li • Complete data ownership
+              li • No usage limits
+              li • Custom integrations
+              li • Enterprise support available
+          a.bg-gray-800.text-white.px-8.py-4.border-4.border-black.hover:bg-gray-700.transition-all.font-bold.text-lg.inline-block href="/docs/self-hosting"
+            | View Setup Guide
