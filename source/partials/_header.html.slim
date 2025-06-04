@@ -4,9 +4,9 @@ header.border-b-4.border-black.bg-white
 
       / Logo and Brand
       .flex.items-center.space-x-3
-        .w-10.h-10.bg-black.border-4.border-black.flex.items-center.justify-center
-          .w-6.h-6.bg-white.transform.rotate-45
-        span.text-2xl.font-bold.text-black Iterator
+        = inline_svg "logo.svg", class: "w-10 h-10"
+        a.text-black.hover:text-blue-600 href="/"
+          span.text-2xl.font-bold Iterator
 
       / Navigation Links
       .hidden.md:flex.items-center.space-x-8
@@ -19,10 +19,10 @@ header.border-b-4.border-black.bg-white
       / Right side actions
       .flex.items-center.space-x-4
         a.text-black.hover:text-gray-600.transition-colors href="https://github.com/iterator-pm/iterator" target="_blank" rel="noopener"
-          svg.w-6.h-6 fill="currentColor" viewBox="0 0 24 24"
-            path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387..."
+          = inline_svg "github.svg", class: "w-6 h-6 text-black hover:text-gray-600 transition-colors"
         a.text-black.hover:text-gray-600.font-medium.transition-colors href="/login" Login
-        a.bg-black.text-white.px-6.py-2.border-4.border-black.hover:bg-white.hover:text-black.transition-all.font-medium href="/signup"
+
+        a.bg-black.text-white.px-6.py-2.border-4.border-black.rounded-lg.font-bold.hover:bg-gray-800.transition-all.transform.hover:-translate-y-1.inline-block[href="/signup"]
           | Sign Up
 
       / Mobile menu button

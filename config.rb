@@ -11,7 +11,10 @@ page '/*.txt', layout: false
 
 activate :blog do |blog|
   blog.prefix = "changelog"
+  blog.layout = "blog_layout"
 end
+
+activate :inline_svg
 
 # With alternative layout
 # page '/path/to/file.html', layout: 'other_layout'

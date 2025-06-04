@@ -1,0 +1,336 @@
+doctype html
+html lang="en"
+  head
+    meta charset="UTF-8"
+    meta name="viewport" content="width=device-width, initial-scale=1.0"
+    title= current_page.data.title ? "#{current_page.data.title} - Iterator Changelog" : "Iterator - Modern Agile Project Management"
+    meta name="description" content=(current_page.data.description || "Latest insights on agile project management, development practices, and team collaboration.")
+    link rel='stylesheet' href="/main.css"
+    style
+      | @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+      |
+      | body {
+      |   font-family: 'Inter', sans-serif;
+      | }
+      | .arrow-right::after {
+      |   content: '→';
+      |   margin-left: 0.5rem;
+      |   font-weight: bold;
+      | }
+      | .stick-figure {
+      |   width: 40px;
+      |   height: 40px;
+      |   background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='8' r='3' fill='none' stroke='%23000' stroke-width='2'/%3E%3Cline x1='20' y1='11' x2='20' y2='25' stroke='%23000' stroke-width='2'/%3E%3Cline x1='20' y1='15' x2='15' y2='20' stroke='%23000' stroke-width='2'/%3E%3Cline x1='20' y1='15' x2='25' y2='20' stroke='%23000' stroke-width='2'/%3E%3Cline x1='20' y1='25' x2='15' y2='32' stroke='%23000' stroke-width='2'/%3E%3Cline x1='20' y1='25' x2='25' y2='32' stroke='%23000' stroke-width='2'/%3E%3C/svg%3E") no-repeat center;
+      | }
+      |
+      | /* Enhanced prose styles for neobrutalism */
+      | .prose-neobrutalism h1 {
+      |   @apply text-4xl font-black mb-6 leading-tight;
+      |   border-left: 6px solid #3b82f6;
+      |   padding-left: 1rem;
+      |   background: linear-gradient(135deg, #fef3c7 0%, #fed7aa 100%);
+      |   border: 4px solid #000;
+      |   padding: 1.5rem;
+      |   margin-bottom: 2rem;
+      |   transform: rotate(-0.5deg);
+      | }
+      | .prose-neobrutalism h2 {
+      |   @apply text-3xl font-bold mb-4 mt-8 pb-2;
+      |   border-bottom: 4px solid #000;
+      |   position: relative;
+      | }
+      | .prose-neobrutalism h2::before {
+      |   content: '';
+      |   position: absolute;
+      |   left: -1rem;
+      |   top: 0.5rem;
+      |   width: 12px;
+      |   height: 12px;
+      |   background: #10b981;
+      |   border: 3px solid #000;
+      |   border-radius: 50%;
+      | }
+      | .prose-neobrutalism h3 {
+      |   @apply text-2xl font-bold mb-3 mt-6;
+      |   color: #7c3aed;
+      |   position: relative;
+      | }
+      | .prose-neobrutalism h3::before {
+      |   content: '▶';
+      |   color: #f59e0b;
+      |   margin-right: 0.5rem;
+      |   font-size: 0.8em;
+      | }
+      | .prose-neobrutalism p {
+      |   @apply text-lg leading-relaxed mb-6;
+      |   text-align: justify;
+      | }
+      | .prose-neobrutalism blockquote {
+      |   @apply border-l-0 pl-0 my-8;
+      |   background: #f3f4f6;
+      |   border: 4px solid #000;
+      |   padding: 2rem;
+      |   position: relative;
+      |   transform: rotate(0.5deg);
+      | }
+      | .prose-neobrutalism blockquote::before {
+      |   content: '"';
+      |   position: absolute;
+      |   top: -10px;
+      |   left: -10px;
+      |   font-size: 4rem;
+      |   font-weight: bold;
+      |   color: #3b82f6;
+      |   background: #fbbf24;
+      |   border: 4px solid #000;
+      |   width: 60px;
+      |   height: 60px;
+      |   display: flex;
+      |   align-items: center;
+      |   justify-content: center;
+      |   border-radius: 50%;
+      | }
+      | .prose-neobrutalism code {
+      |   @apply bg-gray-100 px-2 py-1 rounded text-sm font-mono;
+      |   border: 2px solid #000;
+      |   color: #dc2626;
+      | }
+      | .prose-neobrutalism pre {
+      |   @apply bg-gray-900 text-green-400 p-6 rounded-xl overflow-x-auto my-6;
+      |   border: 4px solid #000;
+      |   position: relative;
+      | }
+      | .prose-neobrutalism pre::before {
+      |   content: '~/code';
+      |   position: absolute;
+      |   top: -12px;
+      |   left: 20px;
+      |   background: #000;
+      |   color: #fff;
+      |   padding: 0.25rem 0.75rem;
+      |   font-size: 0.75rem;
+      |   font-weight: bold;
+      | }
+      | .prose-neobrutalism ul, .prose-neobrutalism ol {
+      |   @apply my-6;
+      | }
+      | .prose-neobrutalism li {
+      |   @apply mb-2 text-lg;
+      |   position: relative;
+      |   padding-left: 1.5rem;
+      | }
+      | .prose-neobrutalism ul li::before {
+      |   content: '●';
+      |   position: absolute;
+      |   left: 0;
+      |   color: #3b82f6;
+      |   font-weight: bold;
+      | }
+      | .prose-neobrutalism a {
+      |   @apply text-blue-600 font-semibold no-underline;
+      |   border-bottom: 3px solid #fbbf24;
+      |   transition: all 0.2s ease;
+      | }
+      | .prose-neobrutalism a:hover {
+      |   background: #fbbf24;
+      |   color: #000;
+      |   transform: translateY(-2px);
+      | }
+      | .prose-neobrutalism img {
+      |   @apply rounded-xl my-8;
+      |   border: 4px solid #000;
+      |   box-shadow: 8px 8px 0 #fbbf24;
+      | }
+      | .prose-neobrutalism table {
+      |   @apply w-full my-8;
+      |   border: 4px solid #000;
+      |   border-collapse: separate;
+      |   border-spacing: 0;
+      | }
+      | .prose-neobrutalism th {
+      |   @apply bg-blue-400 font-bold p-3 text-left;
+      |   border-bottom: 4px solid #000;
+      | }
+      | .prose-neobrutalism td {
+      |   @apply p-3 border-b-2 border-gray-200;
+      | }
+      | .prose-neobrutalism tr:nth-child(even) {
+      |   background: #f9fafb;
+      | }
+
+  body.bg-gradient-to-br.from-blue-50.to-purple-50.min-h-screen
+    = partial 'partials/header'
+
+    / Changelog post hero section
+    - if current_page.data.title
+      section.bg-gradient-to-r.from-yellow-200.via-pink-200.to-purple-200.py-16.px-6.relative.overflow-hidden
+        / Decorative elements
+        .absolute.-top-6.-right-6.w-20.h-20.bg-blue-400.border-4.border-black.rounded-full.transform.rotate-12
+        .absolute.top-8.right-32.w-12.h-12.bg-green-300.border-4.border-black.transform.-rotate-12
+        .absolute.-bottom-4.left-16.w-16.h-16.bg-purple-300.border-4.border-black.rounded-lg.transform.rotate-45
+        .absolute.top-20.left-8.w-8.h-8.bg-red-400.border-4.border-black.rounded-full
+
+        .max-w-4xl.mx-auto.relative.z-10
+          / Breadcrumb navigation
+          nav.mb-8
+            a.inline-flex.items-center.text-sm.font-medium.hover:underline.bg-white.border-2.border-black.px-3.py-1.rounded-lg[href="/changelog"]
+              svg.w-4.h-4.mr-2[fill="none" stroke="currentColor" viewBox="0 0 24 24"]
+                path[stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m0 7h18"]
+              | Back to Changelog
+
+          / Article metadata
+          .flex.flex-wrap.gap-4.mb-6
+            - if current_page.data.date
+              .bg-white.border-4.border-black.px-4.py-2.rounded-lg.font-bold.transform.-rotate-1
+                time[datetime=current_page.data.date.to_time.iso8601]
+                  = Date.parse(current_page.data.date).strftime("%B %-d, %Y")
+            - if current_page.data.tags
+              - current_page.data.tags.each do |tag|
+                .bg-blue-300.border-4.border-black.px-3.py-1.rounded-full.text-sm.font-bold.transform.rotate-1
+                  = tag
+            - if current_page.data.read_time
+              .bg-green-300.border-4.border-black.px-3.py-1.rounded-lg.text-sm.font-bold
+                svg.w-4.h-4.inline.mr-1[fill="none" stroke="currentColor" viewBox="0 0 24 24"]
+                  path[stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"]
+                = current_page.data.read_time
+                |  min read
+
+          / Article title
+          h1.text-5xl.lg:text-6xl.font-black.leading-tight.mb-6
+            = current_page.data.title
+
+          / Article description
+          - if current_page.data.description
+            .bg-white.border-4.border-black.rounded-xl.p-6.text-xl.leading-relaxed.transform.rotate-1.max-w-3xl
+              = current_page.data.description
+
+    / Main content area
+    main.py-12.px-6
+      .max-w-4xl.mx-auto
+        .grid.grid-cols-1.lg:grid-cols-4.gap-8
+
+          / Article content
+          article.lg:col-span-3.bg-white.border-4.border-black.rounded-xl.p-8.lg:p-12.relative
+            / Decorative corner elements
+            .absolute.-top-3.-right-3.w-12.h-8.bg-yellow-300.border-4.border-black.rounded-full
+            .absolute.-top-1.-right-6.w-6.h-6.bg-pink-300.border-4.border-black.rounded-full
+
+            / Article body with enhanced prose styles
+            .prose-neobrutalism.max-w-none
+              == yield
+
+            / Article footer
+            footer.mt-12.pt-8.border-t-4.border-gray-200
+              .flex.flex-wrap.gap-4.mb-6
+                - if current_page.data.author
+                  .bg-purple-200.border-4.border-black.rounded-lg.p-4.flex.items-center
+                    .w-12.h-12.bg-purple-400.border-4.border-black.rounded-full.flex.items-center.justify-center.mr-4
+                      span.font-bold.text-white= current_page.data.author.first
+                    div
+                      .font-bold.text-lg= current_page.data.author
+                      .text-gray-600.text-sm Article Author
+
+                / Share buttons
+                .flex.gap-3
+                  button.bg-blue-400.border-4.border-black.rounded-lg.px-4.py-2.font-bold.hover:bg-blue-500.transition-all.transform.hover:-translate-y-1[onclick="navigator.share({title: '#{current_page.data.title}', url: window.location.href}) || window.open('https://twitter.com/intent/tweet?text=#{current_page.data.title}&url=' + window.location.href)"]
+                    svg.w-5.h-5.mr-2.inline[fill="currentColor" viewBox="0 0 24 24"]
+                      path[d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"]
+                    | Share
+                  button.bg-green-400.border-4.border-black.rounded-lg.px-4.py-2.font-bold.hover:bg-green-500.transition-all.transform.hover:-translate-y-1[onclick="navigator.clipboard.writeText(window.location.href).then(() => alert('Link copied!'))"]
+                    svg.w-5.h-5.mr-2.inline[fill="none" stroke="currentColor" viewBox="0 0 24 24"]
+                      path[stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"]
+                    | Copy Link
+
+          / Sidebar
+          aside.lg:col-span-1.space-y-6
+            / Table of contents (auto-generated from headings)
+            .bg-white.border-4.border-black.rounded-xl.p-6.sticky.top-8
+              .flex.items-center.mb-4
+                .w-8.h-8.bg-purple-400.border-4.border-black.rounded-lg.flex.items-center.justify-center.mr-3
+                  svg.w-4.h-4.text-white[fill="none" stroke="currentColor" viewBox="0 0 24 24"]
+                    path[stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"]
+                h3.font-bold.text-lg Contents
+              nav#table-of-contents.space-y-2
+                / Will be populated by JavaScript
+
+            / Related articles or CTA
+            .bg-gradient-to-br.from-yellow-200.to-orange-200.border-4.border-black.rounded-xl.p-6.relative
+              .absolute.-top-2.-right-2.w-8.h-8.bg-red-400.border-4.border-black.rounded-full
+              h3.font-bold.text-lg.mb-4.flex.items-center
+                svg.w-5.h-5.mr-2[fill="none" stroke="currentColor" viewBox="0 0 24 24"]
+                  path[stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"]
+                | Keep Reading
+              p.text-sm.mb-4 Discover more insights on agile project management and team collaboration.
+              a.bg-black.text-white.px-4.py-2.border-4.border-black.rounded-lg.font-bold.hover:bg-gray-800.transition-all.transform.hover:-translate-y-1.inline-block.arrow-right[href="/changelog"]
+                | View All Posts
+
+    / Floating back to top button
+    button#back-to-top.fixed.bottom-8.right-8.w-16.h-16.bg-yellow-400.border-4.border-black.rounded-full.flex.items-center.justify-center.font-bold.hover:bg-yellow-500.transition-all.transform.hover:-translate-y-1.hover:shadow-lg.z-50[onclick="window.scrollTo({top: 0, behavior: 'smooth'})"]
+      svg.w-6.h-6[fill="none" stroke="currentColor" viewBox="0 0 24 24"]
+        path[stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"]
+
+    javascript:
+      // Auto-generate table of contents
+      document.addEventListener('DOMContentLoaded', function() {
+        const headings = document.querySelectorAll('.prose-neobrutalism h2, .prose-neobrutalism h3');
+        const toc = document.getElementById('table-of-contents');
+
+        if (headings.length > 0) {
+          headings.forEach((heading, index) => {
+            const id = 'heading-' + index;
+            heading.id = id;
+
+            const link = document.createElement('a');
+            link.href = '#' + id;
+            link.textContent = heading.textContent;
+            link.className = 'block py-1 text-sm hover:text-blue-600 hover:underline transition-colors ' +
+                            (heading.tagName === 'H2' ? 'font-semibold' : 'pl-4 text-gray-600');
+
+            toc.appendChild(link);
+          });
+        } else {
+          toc.innerHTML = '<p class="text-gray-500 text-sm">No headings found</p>';
+        }
+
+        // Smooth scroll for TOC links
+        document.querySelectorAll('#table-of-contents a').forEach(link => {
+          link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+              target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+          });
+        });
+
+        // Show/hide back to top button
+        const backToTop = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+          if (window.scrollY > 300) {
+            backToTop.style.display = 'flex';
+          } else {
+            backToTop.style.display = 'none';
+          }
+        });
+
+        backToTop.style.display = 'none';
+
+        // Reading progress indicator
+        const article = document.querySelector('article');
+        if (article) {
+          const progressBar = document.createElement('div');
+          progressBar.className = 'fixed top-0 left-0 w-full h-2 bg-yellow-400 border-b-4 border-black z-50 transform scale-x-0 origin-left transition-transform duration-300';
+          document.body.appendChild(progressBar);
+
+          window.addEventListener('scroll', () => {
+            const articleTop = article.offsetTop;
+            const articleHeight = article.offsetHeight;
+            const scrolled = window.scrollY - articleTop;
+            const progress = Math.max(0, Math.min(1, scrolled / articleHeight));
+
+            progressBar.style.transform = `scaleX(${progress})`;
+          });
+        }
+      });
+
+    = partial 'partials/footer'
