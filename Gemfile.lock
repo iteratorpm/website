@@ -26,7 +26,7 @@ GEM
       public_suffix (>= 2.0.2, < 7.0)
     base64 (0.3.0)
     benchmark (0.4.1)
-    bigdecimal (3.2.1)
+    bigdecimal (3.2.2)
     coffee-script (2.4.1)
       coffee-script-source
       execjs
@@ -137,7 +137,7 @@ GEM
     parslet (2.0.0)
     public_suffix (6.0.2)
     racc (1.8.1)
-    rack (3.1.15)
+    rack (3.1.16)
     rackup (2.2.1)
       rack (>= 3)
     rb-fsevent (0.11.2)
