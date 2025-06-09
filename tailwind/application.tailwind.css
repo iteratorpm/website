@@ -50,3 +50,51 @@
   strong { @apply font-semibold; }
   em { @apply italic; }
 }
+
+/* Smooth scrolling for TOC links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Active TOC link styling */
+.toc-active {
+  @apply text-black border-black bg-gray-50;
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 1024px) {
+  .prose {
+    @apply text-base;
+  }
+  
+  .prose h1 {
+    @apply text-2xl;
+  }
+  
+  .prose h2 {
+    @apply text-xl;
+  }
+  
+  .prose h3 {
+    @apply text-lg;
+  }
+}
+
+/* Focus styles for accessibility */
+a:focus,
+button:focus {
+  @apply outline-none ring-4 ring-black ring-offset-2;
+}
+
+/* Print styles */
+@media print {
+  .sticky {
+    position: static !important;
+  }
+  
+  nav,
+  .sidebar,
+  .toc {
+    display: none !important;
+  }
+}

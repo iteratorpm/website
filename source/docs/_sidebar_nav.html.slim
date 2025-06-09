@@ -1,0 +1,78 @@
+.bg-white.border-4.border-black.rounded-lg.p-6.shadow-lg
+
+  - if current_page.url.start_with?("/docs") && !current_page.url.match?(/\/(api|cloud|guides|analytics)/)
+    - doc_iterator_pages.each do |section, pages|
+      h3.font-bold.mb-4.text-lg.border-b-2.border-black.pb-2= section
+      ul.mb-6
+        - pages.each do |page|
+          - is_active = current_page.url == page[:url] || current_page.url == "#{page[:url]}/"
+          li
+            - if page[:coming_soon]
+              span.block.px-3.py-2.rounded.border-2.border-dashed.border-gray-300.text-gray-400.cursor-not-allowed
+                = page[:title]
+            - else
+              = link_to page[:url], class: "block px-3 py-2 rounded border-2 transition-colors #{is_active ? 'bg-black text-white border-black' : 'border-transparent hover:border-black hover:bg-gray-50'}"
+                = page[:title]
+
+  - elsif current_page.url.start_with?("/docs/api")
+    / API section
+    h3.font-bold.mb-4.text-lg.border-b-2.border-black.pb-2 API Reference
+    ul.mb-6
+      - doc_api_pages.each do |page|
+        li
+          = link_to page[:url], class: "block px-3 py-2 rounded border-2 transition-colors #{page[:active] ? 'bg-black text-white border-black' : 'border-transparent hover:border-black hover:bg-gray-50'}"
+            = page[:title]
+
+  - elsif current_page.url.start_with?("/docs/analytics")
+    / Analytics section
+    - doc_analytics_pages.each do |section, pages|
+      h3.font-bold.mb-4.text-lg.border-b-2.border-black.pb-2= section
+      ul.mb-6
+        - pages.each do |page|
+          - is_active = current_page.url == page[:url] || current_page.url == "#{page[:url]}/"
+          li
+            - if page[:coming_soon]
+              span.block.px-3.py-2.rounded.border-2.border-dashed.border-gray-300.text-gray-400.cursor-not-allowed
+                = page[:title]
+            - else
+              = link_to page[:url], class: "block px-3 py-2 rounded border-2 transition-colors #{is_active ? 'bg-black text-white border-black' : 'border-transparent hover:border-black hover:bg-gray-50'}"
+                = page[:title]
+
+  - elsif current_page.url.start_with?("/docs/integrations")
+    / Integrations section
+    - doc_analytics_pages.each do |section, pages|
+      h3.font-bold.mb-4.text-lg.border-b-2.border-black.pb-2= section
+      ul.mb-6
+        - pages.each do |page|
+          - is_active = current_page.url == page[:url] || current_page.url == "#{page[:url]}/"
+          li
+            - if page[:coming_soon]
+              span.block.px-3.py-2.rounded.border-2.border-dashed.border-gray-300.text-gray-400.cursor-not-allowed
+                = page[:title]
+            - else
+              = link_to page[:url], class: "block px-3 py-2 rounded border-2 transition-colors #{is_active ? 'bg-black text-white border-black' : 'border-transparent hover:border-black hover:bg-gray-50'}"
+                = page[:title]
+
+  - elsif current_page.url.start_with?("/docs/cloud")
+    / Cloud section
+    - doc_cloud_pages.each do |section, pages|
+      h3.font-bold.mb-4.text-lg.border-b-2.border-black.pb-2= section
+      ul.mb-6
+        - pages.each do |page|
+          - is_active = current_page.url == page[:url] || current_page.url == "#{page[:url]}/"
+          li
+            - if page[:coming_soon]
+              span.block.px-3.py-2.rounded.border-2.border-dashed.border-gray-300.text-gray-400.cursor-not-allowed
+                = page[:title]
+            - else
+              = link_to page[:url], class: "block px-3 py-2 rounded border-2 transition-colors #{is_active ? 'bg-black text-white border-black' : 'border-transparent hover:border-black hover:bg-gray-50'}"
+                = page[:title]
+
+  - elsif current_page.url.start_with?("/docs/guides")
+    / Guides section
+    h3.font-bold.mb-4.text-lg.border-b-2.border-black.pb-2 Guides
+    ul.mb-6
+      - doc_guide_pages.each do |page|
+        li
+          = link_to page[:url], class: "block px-3 py-2 rounded border-2 transition-colors #{page[:active] ? 'bg-black text-white border-black' : 'border-transparent hover:border-black hover:bg-gray-50'}"
+            = page[:title]

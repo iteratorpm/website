@@ -1,0 +1,132 @@
+---
+title: "API Overview"
+section: "API Reference"
+layout: docs
+next_page:
+  title: "Authentication"
+  url: "/docs/api/authentication"
+---
+
+markdown:
+  # API Reference
+
+  The Iterator API provides programmatic access to all platform features. This RESTful API uses JSON for data exchange and follows standard HTTP conventions.
+
+  ## Base URL
+
+  All API requests should be made to:
+  ```
+  https://api.iterator.com/v1
+  ```
+
+  ## Authentication
+
+  The Iterator API uses API keys for authentication. Include your API key in the Authorization header:
+
+  ```bash
+  curl -H "Authorization: Bearer YOUR_API_KEY" \
+       https://api.iterator.com/v1/projects
+  ```
+
+  ## Request Format
+
+  - **Content-Type**: `application/json`
+  - **Method**: Standard HTTP methods (GET, POST, PUT, DELETE)
+  - **Headers**: Include authentication and content-type headers
+
+  ### Example Request
+
+  ```bash
+  curl -X POST https://api.iterator.com/v1/projects \
+    -H "Authorization: Bearer YOUR_API_KEY" \
+    -H "Content-Type: application/json" \
+    -d '{
+      "name": "My Project",
+      "description": "A sample project"
+    }'
+  ```
+
+  ## Response Format
+
+  All responses return JSON with the following structure:
+
+  ### Success Response
+  ```json
+  {
+    "success": true,
+    "data": {
+      "id": "proj_123",
+      "name": "My Project",
+      "created_at": "2024-01-15T10:30:00Z"
+    }
+  }
+  ```
+
+  ### Error Response
+  ```json
+  {
+    "success": false,
+    "error": {
+      "code": "INVALID_REQUEST",
+      "message": "The request is missing required fields"
+    }
+  }
+  ```
+
+  ## HTTP Status Codes
+
+  The API uses standard HTTP status codes:
+
+  - **200 OK**: Request successful
+  - **201 Created**: Resource created successfully
+  - **400 Bad Request**: Invalid request parameters
+  - **401 Unauthorized**: Invalid or missing API key
+  - **404 Not Found**: Resource not found
+  - **429 Too Many Requests**: Rate limit exceeded
+  - **500 Internal Server Error**: Server error
+
+  ## Rate Limiting
+
+  API requests are limited to prevent abuse:
+
+  - **Free tier**: 1,000 requests per hour
+  - **Pro tier**: 10,000 requests per hour
+  - **Enterprise**: Custom limits
+
+  Rate limit information is included in response headers:
+  ```
+  X-RateLimit-Limit: 1000
+  X-RateLimit-Remaining: 999
+  X-RateLimit-Reset: 1640995200
+  ```
+
+  ## Pagination
+
+  List endpoints support pagination using query parameters:
+
+  ```bash
+  GET /api/v1/projects?page=2&per_page=50
+  ```
+
+  Pagination info is included in the response:
+  ```json
+  {
+    "data": [...],
+    "pagination": {
+      "page": 2,
+      "per_page": 50,
+      "total": 150,
+      "pages": 3
+    }
+  }
+  ```
+
+  ## Error Handling
+
+  When an error occurs, the API returns an appropriate HTTP status code and error details in the response body. Always check the `success` field in the response.
+
+  ## Next Steps
+
+  - Learn about [Authentication](/docs/api/authentication)
+  - Explore available [Endpoints](/docs/api/endpoints)
+  - Understand [Rate Limits](/docs/api/rate-limits)

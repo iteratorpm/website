@@ -16,37 +16,30 @@ end
 
 activate :inline_svg
 
-# With alternative layout
-# page '/path/to/file.html', layout: 'other_layout'
+activate :directory_indexes
 
-# Proxy pages
-# https://middlemanapp.com/advanced/dynamic-pages/
+activate :syntax
 
-# proxy(
-#   '/this-page-has-no-template.html',
-#   '/template-file.html',
-#   locals: {
-#     which_fake_page: 'Rendering a fake page with a local variable'
-#   },
-# )
+# Configure markdown processor
+set :markdown_engine, :kramdown
+set :markdown, {
+  fenced_code_blocks: true,
+  smartypants: true,
+  tables: true,
+  autolink: true,
+  gh_blockcode: true
+}
 
-# Helpers
-# Methods defined in the helpers block are available in templates
-# https://middlemanapp.com/basics/helper-methods/
+# Helpers for navigation
+require "helpers/docs_helper"
+helpers DocsHelper
 
-# helpers do
-#   def some_helper
-#     'Helping'
-#   end
-# end
-
-# Build-specific configuration
-# https://middlemanapp.com/advanced/configuration/#environment-specific-settings
-
-# configure :build do
-#   activate :minify_css
-#   activate :minify_javascript, compressor: Terser.new
-# end
+# Build configuration
+configure :build do
+  activate :minify_css
+  activate :minify_javascript
+  activate :minify_html
+end
 
 activate :tailwind,
   css_path: "tailwind/application.tailwind.css",              # Optional
