@@ -11,7 +11,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
@@ -23,7 +23,7 @@ jobs:
         run: bundle install
 
       - name: Build site with Middleman
-        run: RUST_BACKTRACE=full bundle exec middleman build --verbose
+        run: bundle exec middleman build --verbose
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
