@@ -140,12 +140,13 @@ module DocsHelper
 
   def doc_integrations_pages
     {
+      "Integrations" => [
+        { title: "Overview", url: "/docs/integrations" },
+      ],
+
       "Third-Party Services" => [
         { title: "Slack", url: "/docs/integrations/slack" },
-        { title: "Standup Updates Utility (Beta)", url: "/docs/integrations/standup-utility" },
         { title: "JIRA", url: "/docs/integrations/jira" },
-        { title: "Bugzilla", url: "/docs/integrations/bugzilla" },
-        { title: "Zendesk", url: "/docs/integrations/zendesk" },
         { title: "Other Integrations", url: "/docs/integrations/other" }
       ],
 
@@ -153,29 +154,20 @@ module DocsHelper
         { title: "Source Control Management", url: "/docs/integrations/source-control" },
         { title: "GitHub", url: "/docs/integrations/github" },
         { title: "GitHub Enterprise", url: "/docs/integrations/github-enterprise" },
-        { title: "Bitbucket", url: "/docs/integrations/bitbucket" },
-        { title: "Bitbucket Server", url: "/docs/integrations/bitbucket-server" },
         { title: "GitLab", url: "/docs/integrations/gitlab" },
-        { title: "GitLab Self-Managed", url: "/docs/integrations/gitlab-self-managed" }
+        { title: "GitLab Self-Managed", url: "/docs/integrations/gitlab-self-managed" },
+        { title: "Codeberg", url: "/docs/integrations/codeberg" },
+        { title: "Gitea", url: "/docs/integrations/gitea" }
       ],
 
       "CI/CD" => [
         { title: "Concourse Integration", url: "/docs/integrations/concourse" },
-        { title: "Jenkins Integration", url: "/docs/integrations/jenkins" },
         { title: "Custom CI/CD Integration", url: "/docs/integrations/custom-ci" }
       ],
 
       "Webhooks / API" => [
         { title: "Activity Webhook", url: "/docs/integrations/webhook" },
-        { title: "REST API v5", url: "/docs/integrations/api-v5" },
-        { title: "Migrating to API v5", url: "/docs/integrations/migrating-api-v5" }
-      ],
-
-      "Deprecated Integrations" => [
-        { title: "Campfire", url: "/docs/integrations/campfire" },
-        { title: "Lighthouse", url: "/docs/integrations/lighthouse" },
-        { title: "Get Satisfaction", url: "/docs/integrations/get-satisfaction" },
-        { title: "GitHub’s Service Hook", url: "/docs/integrations/github-service-hook" }
+        { title: "REST API", url: "/docs/integrations/api" }
       ]
     }
   end
@@ -183,7 +175,7 @@ module DocsHelper
   def doc_analytics_pages
     {
       "Analytics & Reports" => [
-        { title: "Analytics Overview", url: "/docs/analytics" },
+        { title: "Overview", url: "/docs/analytics" },
         { title: "Project Overview report", url: "/docs/analytics/project-overview" },
         { title: "Velocity chart", url: "/docs/analytics/velocity-chart" },
         { title: "Cycle Time report", url: "/docs/analytics/cycle-time" },
@@ -212,10 +204,9 @@ module DocsHelper
 
   def doc_cloud_pages
     {
-      "Cloud Platform" => [
-        { title: "Deployment", url: "/docs/cloud/deployment" },
-        { title: "Scaling", url: "/docs/cloud/scaling" },
-        { title: "Monitoring", url: "/docs/cloud/monitoring" }
+      "Getting Started" => [
+        { title: "Overview", url: "/docs/cloud" },
+        { title: "Sign Up", url: "/docs/cloud/sign_up" },
       ],
 
       "Billing & Subscriptions" => [
@@ -253,7 +244,7 @@ module DocsHelper
 
   def doc_nav_items
     [
-      { name: "Iterator", path: "/docs", active: current_page.url.start_with?("/docs") && !current_page.url.match?(/\/(api|cloud|guides)/) },
+      { name: "Iterator", path: "/docs", active: current_page.url.start_with?("/docs") && !current_page.url.match?(/\/(api|cloud|guides|analytics|integrations)/) },
       { name: "Analytics & Reports", path: "/docs/analytics", active: current_page.url.start_with?("/docs/analytics") },
       { name: "Integrations", path: "/docs/integrations", active: current_page.url.start_with?("/docs/integrations") },
       { name: "Cloud", path: "/docs/cloud", active: current_page.url.start_with?("/docs/cloud") },
