@@ -1,0 +1,52 @@
+section.bg-gradient-to-br.from-yellow-300.to-orange-400.border-t-8.border-black.relative.overflow-hidden
+
+  .max-w-7xl.mx-auto.px-4.sm:px-6.lg:px-8.py-16.sm:py-20.relative
+    .grid.grid-cols-1.lg:grid-cols-2.gap-8.lg:gap-12.items-center
+      / Left side - SVG Icon
+      .flex.justify-center.lg:justify-start
+        .relative
+          / Main icon container
+          .w-32.h-32.sm:w-40.sm:h-40.bg-white.border-6.border-black.rounded-none.flex.items-center.justify-center.transform.rotate-3.shadow-brutal
+            = inline_svg "check.svg", class: "w-18 h-18"
+
+          / Decorative elements
+          .absolute.-top-4.-right-4.w-8.h-8.bg-red-400.border-4.border-black.transform.rotate-45
+          .absolute.-bottom-6.-left-6.w-12.h-12.bg-blue-400.border-4.border-black.rounded-full.flex.items-center.justify-center
+            .w-4.h-4.bg-white.rounded-full
+
+          / Floating sparkles
+          .absolute.top-3.right-8.animate-bounce.delay-300
+            svg[width="34" height="34" viewBox="0 0 24 24" class="text-black"]
+              path[d="M12 2 L14 8 L20 10 L14 12 L12 18 L10 12 L4 10 L10 8 Z" fill="currentColor"]
+          .absolute.bottom-4.right-3.animate-bounce.delay-700
+            svg[width="26" height="26" viewBox="0 0 24 24" class="text-black"]
+              path[d="M12 2 L14 8 L20 10 L14 12 L12 18 L10 12 L4 10 L10 8 Z" fill="currentColor"]
+
+      / Right side - Content
+      .text-center.lg:text-left
+        / Heading
+        h2.text-4xl.sm:text-5xl.lg:text-6xl.font-black.text-black.mb-4.leading-tight
+          | Ready to Launch
+          br
+          span.relative
+            | Your Projects?
+            .absolute.-bottom-2.left-0.right-0.h-4.bg-red-400.border-2.border-black.transform.-skew-x-12.-z-10
+
+        / CTA Button
+        .flex.flex-col.sm:flex-row.gap-4.justify-center.lg:justify-start.items-center
+          a.group.bg-black.text-white.px-8.py-4.border-4.border-black.hover:bg-white.hover:text-black.transition-all.duration-200.font-black.text-xl.inline-flex.items-center.shadow-brutal.hover:shadow-brutal-hover.transform.hover:-translate-y-1.hover:translate-x-1 href="https://app.iteratorpm.com/users/sign_up"
+            | Start Building Now
+            svg[width="24" height="24" viewBox="0 0 24 24" class="ml-3 transform group-hover:translate-x-1 transition-transform"]
+              path[d="M5 12 H19 M12 5 L19 12 L12 19" stroke="currentColor" stroke-width="3" fill="none"]
+
+/ Custom CSS for brutal shadows (add to your CSS file)
+css:
+  .shadow-brutal {
+    box-shadow: 8px 8px 0px 0px #000000;
+  }
+  .shadow-brutal-hover {
+    box-shadow: 4px 4px 0px 0px #000000;
+  }
+  .shadow-brutal-sm {
+    box-shadow: 4px 4px 0px 0px #000000;
+  }
