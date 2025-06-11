@@ -6,6 +6,7 @@ gem "middleman-blog", "~> 4.0"
 gem "middleman-inline_svg"
 gem "kramdown"
 gem "middleman-syntax"
+gem "jbuilder"
 
 gem "slim"
 gem 'terser', '~> 1.1'

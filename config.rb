@@ -9,6 +9,10 @@ page '/*.xml', layout: false
 page '/*.json', layout: false
 page '/*.txt', layout: false
 
+require 'jbuilder'
+
+::Tilt.register Tilt::BuilderTemplate, 'jbuilder'
+
 activate :blog do |blog|
   blog.prefix = "changelog"
   blog.layout = "blog_layout"

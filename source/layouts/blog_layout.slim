@@ -5,6 +5,7 @@ html lang="en"
     meta name="viewport" content="width=device-width, initial-scale=1.0"
     title= current_page.data.title ? "#{current_page.data.title} - Iterator Changelog" : "Iterator - Modern Agile Project Management"
     meta name="description" content=(current_page.data.description || "Latest insights on agile project management, development practices, and team collaboration.")
+    = feed_tag :atom, "/feed.xml", title: "Atom Feed"
     link rel='stylesheet' href="/main.css"
     style
       | @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');

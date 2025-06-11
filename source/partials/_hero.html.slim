@@ -13,25 +13,23 @@ section.max-w-7xl.mx-auto.px-4.sm:px-6.lg:px-8.py-20
 
     / Subtitle
     p.text-xl.text-gray-700.mb-4.max-w-2xl.mx-auto
-      | Based on the proven methodology of Pivotal Tracker, Iterator brings you
-      |< streamlined story-driven development with a modern twist.
+      | Based on the proven methodology of Pivotal Tracker.
 
     / Development Warning
-    .max-w-xl.mx-auto.mt-6.bg-yellow-200.border-4.border-black.rounded-xl.p-4
-      p.text-black.font-semibold
-        | 🚧 Still in development. Not all features are available.
+    = partial "partials/in_development"
 
     / Fun element
     .flex.justify-center.items-center.space-x-4.mb-12.mt-6
-      .stick-figure
-      svg[width="60" height="20" viewBox="0 0 60 20" class="text-black"]
+      = inline_svg "person-walking.svg", class: "w-10 h-10"
+      svg[width="60" height="40" viewBox="0 0 60 20" class="text-black"]
         path[d="M5 10 L50 10 M45 5 L50 10 L45 15" stroke="currentColor" stroke-width="3" fill="none"]
       .w-12.h-12.bg-yellow-300.border-4.border-black.flex.items-center.justify-center.transform.rotate-12
-        span.text-xl ✓
+        = inline_svg "check.svg", class: "w-6 h-6"
 
     / CTA Buttons
     .flex.flex-col.sm:flex-row.gap-4.justify-center.items-center
-      a.bg-black.text-white.px-8.py-4.border-4.border-black.hover:bg-white.hover:text-black.transition-all.font-bold.text-lg.arrow-right href="/signup"
+      a.bg-black.text-white.px-8.py-4.border-4.border-black.hover:bg-white.hover:text-black.transition-all.font-bold.text-lg.inline-flex.items-center href="https://app.iteratorpm.com/users/sign_up"
         | Get Started
-      a.bg-white.text-black.px-8.py-4.border-4.border-black.hover:bg-gray-100.transition-all.font-bold.text-lg href="/demo"
+        = inline_svg "arrow-right.svg", class: "w-6 h-6 ml-4"
+      a.bg-white.text-black.px-8.py-4.border-4.border-black.hover:bg-gray-100.transition-all.font-bold.text-lg href="https://app.iteratorpm.com/projects/1"
         | View Demo

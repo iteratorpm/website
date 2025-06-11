@@ -49,8 +49,8 @@ footer.bg-black.text-white.py-16
         .text-gray-400.text-sm.mb-4.md:mb-0
           | © 2025 Iterator. Built with ❤️ for agile teams.
         .flex.items-center.space-x-4
-          .stick-figure style="width: 24px; height: 24px; filter: invert(1);"
+          = inline_svg "person-walking.svg", class: "w-6 h-6 text-white"
           svg width="40" height="20" viewBox="0 0 40 20" class="text-white"
             path d="M5 10 L30 10 M25 5 L30 10 L25 15" stroke="currentColor" stroke-width="2" fill="none"
           .w-6.h-6.bg-yellow-400.border-2.border-white.flex.items-center.justify-center.transform.rotate-12
-            span.text-black.text-xs ✓
+            = inline_svg "check.svg", class: "w-3 h-3 text-black"

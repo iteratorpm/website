@@ -7,62 +7,89 @@ section.bg-gray-50.border-t-4.border-b-4.border-black.py-20
       p.text-xl.text-gray-600.max-w-2xl.mx-auto
         | Get started in minutes. Choose cloud or self-hosted.
       .mt-8.flex.justify-center
-        svg.text-black width="60" height="40" viewBox="0 0 60 40"
-          path stroke="currentColor" stroke-width="4" fill="none" d="M30 5 L30 30 M25 25 L30 30 L35 25"
+        = inline_svg "person-snowboarding.svg", class: "w-10 h-10"
 
     .grid.grid-cols-1.lg:grid-cols-2.gap-12
-      // Cloud Option
-      .bg-white.border-4.border-black.p-8.relative
-        .absolute.-top-4.-right-4.w-16.h-12.bg-blue-200.border-4.border-black.rounded-full
-        .absolute.-top-2.-right-8.w-8.h-8.bg-blue-200.border-4.border-black.rounded-full
-        .text-center
-          .w-20.h-20.bg-blue-100.border-4.border-black.mx-auto.mb-6.flex.items-center.justify-center
-            svg.w-10.h-10.text-black fill="none" stroke="currentColor" viewBox="0 0 24 24"
-              path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10"
+      // Cloud Option - Now with more cloud-like floating shapes
+      .bg-white.border-4.border-black.p-8.relative.overflow-hidden
+        / Floating cloud cluster
+        .absolute.-top-8.-right-8.w-32.h-24.bg-blue-200.border-4.border-black.rounded-full
+        .absolute.top-4.-right-4.w-20.h-16.bg-blue-300.border-4.border-black.rounded-full
+        .absolute.top-12.-right-12.w-12.h-10.bg-blue-400.border-4.border-black.rounded-full
+        / Diagonal connection line
+        .absolute.top-0.left-0.w-full.h-full.overflow-hidden
+          .absolute.top-1/2.left-1/2.w-48.h-1.bg-yellow-300.border-2.border-black.transform.-translate-y-1/2.-translate-x-1/2.-rotate-12
+        / Lightning bolt decoration
+        .absolute.top-6.left-6.w-8.h-12.bg-yellow-400.border-4.border-black.transform.rotate-45
+
+        .text-center.relative.z-10
+          .w-20.h-20.bg-blue-100.border-4.border-black.mx-auto.mb-6.flex.items-center.justify-center.relative
+            = inline_svg "cloud.svg", class: "w-10 h-10"
+            / Mini floating cloud
+            .absolute.-top-2.-right-2.w-6.h-5.bg-blue-200.border-2.border-black.rounded-full
           h3.text-2xl.font-bold.mb-4 Sign Up for Cloud
+          .flex.items-center.justify-center.space-x-4.mb-4
+            = inline_svg "person.svg", class: "h-8 w-8"
+            svg width="40" height="20" viewBox="0 0 40 20"
+              path stroke="currentColor" stroke-width="3" fill="none" d="M5 10 L30 10 M25 5 L30 10 L25 15"
+            .w-8.h-8.bg-green-300.border-3.border-black.flex.items-center.justify-center.transform.rotate-12
+              = inline_svg "check.svg", class: "h-4 w-4"
           p.text-gray-600.mb-6
             | Start managing your projects immediately with our hosted solution.
-          .bg-gray-100.border-2.border-black.p-4.mb-6
-            .flex.items-center.justify-center.space-x-4.mb-4
-              .stick-figure
-              svg.text-green-600 width="40" height="20" viewBox="0 0 40 20"
-                path stroke="currentColor" stroke-width="3" fill="none" d="M5 10 L30 10 M25 5 L30 10 L25 15"
-              .w-8.h-8.bg-green-300.border-2.border-black.flex.items-center.justify-center
-                span.text-sm ✓
+          .bg-gray-100.border-2.border-black.p-4.mb-6.relative
+            / Decorative corner
+            .absolute.-top-2.-right-2.w-4.h-4.bg-pink-300.border-2.border-black
             ul.text-sm.text-gray-700.space-y-2
-              li • Free 30-day trial
+              li • Free for all while in development
               li • No credit card required
-              li • SSL encryption included
-              li • Automatic backups
-          a.bg-blue-500.text-white.px-8.py-4.border-4.border-black.hover:bg-blue-600.transition-all.font-bold.text-lg.inline-block.arrow-right href="/signup"
-            | Start Free Trial
+              li • Import / Export data
+              li • Community support available
+          a.bg-blue-500.text-white.px-8.py-4.border-4.border-black.hover:bg-blue-600.transition-all.font-bold.text-lg.inline-flex.items-center.justify-center href="https://app.iteratorpm.com/users/sign_up"
+            | Sign Up
+            = inline_svg "arrow-right.svg", class: "w-6 h-6 ml-4"
 
-      // Self-Host Option
-      .bg-white.border-4.border-black.p-8.relative
-        .absolute.-top-4.-left-4.w-12.h-16.bg-gray-300.border-4.border-black
-        .absolute.-top-2.-left-2.w-8.h-12.bg-gray-400.border-4.border-black
-        .text-center
-          .w-20.h-20.bg-gray-100.border-4.border-black.mx-auto.mb-6.flex.items-center.justify-center
+      // Self-Host Option - With server rack inspired elements
+      .bg-white.border-4.border-black.p-8.relative.overflow-hidden
+        / Server rack inspired shapes
+        .absolute.-top-4.-right-4.w-12.h-24.bg-gray-300.border-4.border-black.flex.flex-col.justify-between.p-1
+          .w-full.h-2.bg-gray-500.border.border-black
+          .w-full.h-2.bg-gray-500.border.border-black
+          .w-full.h-2.bg-gray-500.border.border-black
+        .absolute.top-8.left-12.w-16.h-16.bg-purple-200.border-4.border-black.rounded-full
+        / Diagonal connection line
+        .absolute.top-0.left-0.w-full.h-full.overflow-hidden
+          .absolute.top-1/2.left-1/2.w-48.h-1.bg-green-300.border-2.border-black.transform.-translate-y-1/2.-translate-x-1/2.rotate-12
+
+        .text-center.relative.z-10
+          .w-20.h-20.bg-gray-100.border-4.border-black.mx-auto.mb-6.flex.items-center.justify-center.relative
             svg.w-10.h-10.text-black fill="none" stroke="currentColor" viewBox="0 0 24 24"
               path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2"
+            / Server light indicator
+            .absolute.-bottom-1.-right-1.w-3.h-3.bg-green-400.border-2.border-black.rounded-full
           h3.text-2xl.font-bold.mb-4 Self Host
+          .flex.items-center.justify-center.space-x-4.mb-4
+            = inline_svg "person-dolly.svg", class: "h-8 w-8"
+            svg.text-purple-600 width="40" height="20" viewBox="0 0 40 20"
+              path stroke="currentColor" stroke-width="3" fill="none" d="M5 10 L30 10 M25 5 L30 10 L25 15"
+            .w-8.h-8.bg-purple-300.border-3.border-black.flex.items-center.justify-center.transform.rotate-12
+              = inline_svg "check.svg", class: "h-4 w-4"
           p.text-gray-600.mb-6
             | Run Iterator on your own infrastructure with full control and privacy.
-          .bg-gray-900.text-green-400.border-2.border-black.p-4.mb-6.font-mono.text-left.text-sm
+          .bg-gray-900.text-green-400.border-2.border-black.p-4.mb-6.font-mono.text-left.text-sm.relative
+            / Terminal decoration
+            .absolute.top-1.right-1.flex.space-x-1
+              .w-3.h-3.bg-red-400.border.border-black.rounded-full
+              .w-3.h-3.bg-yellow-400.border.border-black.rounded-full
+              .w-3.h-3.bg-green-400.border.border-black.rounded-full
             .mb-2.text-gray-400 # One command deployment
-            .text-green-300 $ docker run -d -p 3000:3000 iterator/iterator:latest
-          .bg-gray-100.border-2.border-black.p-4.mb-6
-            .flex.items-center.justify-center.space-x-4.mb-4
-              .w-8.h-8.bg-gray-300.border-2.border-black.flex.items-center.justify-center
-                span.text-sm 🔒
-              svg.text-purple-600 width="40" height="20" viewBox="0 0 40 20"
-                path stroke="currentColor" stroke-width="3" fill="none" d="M5 10 L30 10 M25 5 L30 10 L25 15"
-              .w-8.h-8.bg-purple-300.border-2.border-black.flex.items-center.justify-center
-                span.text-sm ⚡
+            .text-green-300 $ docker run -p 3000:3000 iteratorpm/iterator:latest
+          .bg-gray-100.border-2.border-black.p-4.mb-6.relative
+            / Decorative corner
+            .absolute.-bottom-2.-left-2.w-4.h-4.bg-blue-300.border-2.border-black
             ul.text-sm.text-gray-700.space-y-2
               li • Complete data ownership
               li • No usage limits
               li • Custom integrations
               li • Enterprise support available
-          a.bg-gray-800.text-white.px-8.py-4.border-4.border-black.hover:bg-gray-700.transition-all.font-bold.text-lg.inline-block href="/docs/self-hosting"
+          a.bg-gray-800.text-white.px-8.py-4.border-4.border-black.hover:bg-gray-700.transition-all.font-bold.text-lg.inline-block href="/docs/installation"
             | View Setup Guide
