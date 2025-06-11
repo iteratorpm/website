@@ -18,20 +18,16 @@ module DocsHelper
 
   def doc_iterator_pages
     {
-      "Overview" => [
+      "Getting Started" => [
         { title: "Overview", url: "/docs", active: current_page.url == "/docs" || current_page.url == "/docs/" },
         { title: "Installation", url: "/docs/installation"},
         { title: "Updates", url: "/docs/updates"},
-      ],
-
-      "Getting Started" => [
-        { title: "Quick Start & Demos", url: "/docs/quick-start" },
         { title: "Creating a Project", url: "/docs/creating-a-project" },
         { title: "Adding Stories", url: "/docs/adding-stories" },
         { title: "Working with Stories", url: "/docs/working-with-stories" },
         { title: "Story States", url: "/docs/story-states" },
         { title: "Workflow Overview", url: "/docs/workflow-overview" },
-        { title: "Tracker Terminology", url: "/docs/tracker-terminology" },
+        { title: "Iterator Terminology", url: "/docs/iterator-terminology" },
         { title: "Top Ten Tips", url: "/docs/top-ten-tips" }
       ],
 
@@ -55,7 +51,7 @@ module DocsHelper
         { title: "Public Projects", url: "/docs/public-projects" },
         { title: "Leaving a Project", url: "/docs/leave-project" },
         { title: "Shared Workspaces", url: "/docs/shared-workspaces" },
-        { title: "Tracker and Kanban", url: "/docs/tracker-kanban" },
+        { title: "Iterator and Kanban", url: "/docs/iterator-kanban" },
         { title: "Team Reviews", url: "/docs/reviews" },
         { title: "Communication Preferences", url: "/docs/communication" }
       ],
@@ -99,18 +95,14 @@ module DocsHelper
         { title: "Understanding Accounts and Logins", url: "/docs/accounts/understanding-logins" },
         { title: "Creating an Account", url: "/docs/accounts/creating" },
         { title: "Managing Your Account", url: "/docs/accounts/managing" },
-        { title: "Transferring Account Ownership", url: "/docs/accounts/transferring-ownership" },
         { title: "Deleting an Account", url: "/docs/accounts/deleting" },
         { title: "Login Basics", url: "/docs/accounts/login-basics" },
         { title: "Your Password", url: "/docs/accounts/password" },
         { title: "Two-Factor Authentication", url: "/docs/accounts/2fa" },
         { title: "Merging Logins", url: "/docs/accounts/merging-logins" },
-        { title: "Google Login", url: "/docs/accounts/google-login" },
-        { title: "Deleting Tracker Login", url: "/docs/accounts/deleting-tracker-login" },
         { title: "Updating Name, Email, Initials", url: "/docs/accounts/updating-profile" },
         { title: "Updating Profile Photo", url: "/docs/accounts/profile-photo" },
         { title: "Email and Password", url: "/docs/accounts/email-password" },
-        { title: "Google Profile", url: "/docs/accounts/google-profile" },
         { title: "API Token", url: "/docs/accounts/api-token" },
         { title: "Project Member Roles", url: "/docs/accounts/project-roles" },
         { title: "Adding/Removing Project Members", url: "/docs/accounts/manage-project-members" },
@@ -217,8 +209,7 @@ module DocsHelper
 
       "Privacy & Security" => [
         { title: "Two-factor authentication", url: "/docs/cloud/2fa" },
-        { title: "Google login", url: "/docs/cloud/google-login" },
-        { title: "Deleting your Tracker login", url: "/docs/cloud/delete-login" },
+        { title: "Deleting your Iterator login", url: "/docs/cloud/delete-login" },
         { title: "Transferring account ownership", url: "/docs/cloud/transfer-ownership" },
         { title: "Merging multiple logins", url: "/docs/cloud/merge-logins" },
         { title: "Deleting an account", url: "/docs/cloud/delete-account" }
