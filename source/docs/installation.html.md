@@ -63,7 +63,7 @@ While manual installations are possible, we can only provide support for Docker-
 **Key Requirements**:
 
 1. **Transactional Email Service** (Not regular email providers)
-   - Recommended providers: [Mailgun](https://www.mailgun.com/) / [SendGrid](https://sendgrid.com/) / [Postmark](https://postmarkapp.com/)
+   - Recommended providers: [SMTP2go](https://www.smtp2go.com/) / [Mailgun](https://www.mailgun.com/) / [SendGrid](https://sendgrid.com/) / [Postmark](https://postmarkapp.com/)
    - *Free services like Gmail/Yahoo won't work*
 
 2. **DNS Records**:
@@ -73,12 +73,14 @@ While manual installations are possible, we can only provide support for Docker-
 
 3. **SMTP Credentials**:
 
-   ```bash
-   SMTP_ADDRESS=smtp.yourprovider.com
-   SMTP_PORT=587
-   SMTP_USER_NAME=your_username
-   SMTP_PASSWORD=your_password
-   ```
+These can be added to the commandline or added to the `.env` file (see below).
+
+```bash
+SMTP_ADDRESS=smtp.yourprovider.com
+SMTP_PORT=587
+SMTP_USER_NAME=your_username
+SMTP_PASSWORD=your_password
+```
 
 **Verification Tip**:
 When creating DKIM records, some hosts automatically append your domain. Verify the final record matches your provider's public key exactly.
@@ -87,7 +89,7 @@ When creating DKIM records, some hosts automatically append your domain. Verify 
 
 ## Installation Methods
 
-### 1. Docker
+### 1. Docker Container
 
 #### SQLite DB
 
@@ -148,6 +150,7 @@ cp config/deploy.yml.example config/deploy.yml
 
 # Configure config/deploy.yml and .env
 
+gem install kamal
 kamal setup
 kamal deploy --skip-push
 ```
@@ -166,10 +169,10 @@ kamal deploy --skip-push
 
 1. **Add new admin accounts**:
 
-   ```bash
-   rails c
-   $ User.create! email: "your@email.com", password: "yourpassword", admin: true, confirmed_at: Time.now
-   ```
+```bash
+rails c
+$ User.create! email: "your@email.com", password: "yourpassword", admin: true, confirmed_at: Time.now
+```
 
 1. **Verify email delivery** by creating a test account
 2. **Set up backups** for your database volume

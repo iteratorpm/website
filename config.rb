@@ -25,14 +25,14 @@ activate :directory_indexes
 activate :syntax
 
 # Configure markdown processor
-set :markdown_engine, :kramdown
-set :markdown, {
+set :markdown_engine, :redcarpet
+set :markdown,
   fenced_code_blocks: true,
   smartypants: true,
-  tables: true,
+  with_toc_data: true,
   autolink: true,
-  gh_blockcode: true
-}
+  disable_indented_code_blocks: false,
+  tables: true
 
 # Helpers for navigation
 require "helpers/docs_helper"

@@ -4,8 +4,8 @@ gem 'middleman', '~> 4.5'
 gem 'middleman-tailwind', git: "https://github.com/bendangelo/middleman-tailwind.git"
 gem "middleman-blog", "~> 4.0"
 gem "middleman-inline_svg"
-gem "kramdown"
 gem "middleman-syntax"
+gem 'redcarpet'
 gem "jbuilder"
 
 gem "slim"
