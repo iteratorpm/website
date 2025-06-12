@@ -21,12 +21,14 @@ module DocsHelper
       "Getting Started" => [
         { title: "Overview", url: "/docs", active: current_page.url == "/docs" || current_page.url == "/docs/" },
         { title: "Installation", url: "/docs/installation"},
-        { title: "Updates", url: "/docs/updates"},
         { title: "Creating a Project", url: "/docs/creating-a-project" },
         { title: "Adding Stories", url: "/docs/adding-stories" },
         { title: "Working with Stories", url: "/docs/working-with-stories" },
         { title: "Story States", url: "/docs/story-states" },
         { title: "Workflow Overview", url: "/docs/workflow-overview" },
+        { title: "Planning with Velocity", url: "/docs/planning-with-velocity" },
+        { title: "Organizing with Epics", url: "/docs/organizing-with-epics" },
+        { title: "Managing Projects with Workspaces", url: "/docs/managing-projects-with-workspaces", coming_soon: true },
         { title: "Iterator Terminology", url: "/docs/iterator-terminology" },
         { title: "Top Ten Tips", url: "/docs/top-ten-tips" }
       ],
@@ -34,6 +36,7 @@ module DocsHelper
       "Project Management" => [
         { title: "Dashboard", url: "/docs/dashboard" },
         { title: "Navigating Projects & Workspaces", url: "/docs/navigating-projects" },
+        { title: "Showing All Projects", url: "/docs/showing-all-projects" },
         { title: "Changing Project Settings", url: "/docs/project-settings" },
         { title: "Project Profile", url: "/docs/project-profile" },
         { title: "Moving Projects Between Accounts", url: "/docs/move-project" },
@@ -46,6 +49,7 @@ module DocsHelper
         { title: "Icebox", url: "/docs/icebox" },
         { title: "Story Panels", url: "/docs/story-panels" },
         { title: "Project History", url: "/docs/project-history" },
+        { title: "Deciding Project Count", url: "/docs/deciding-project-count" },
         { title: "Multi-Project Setup", url: "/docs/multi-projects" },
         { title: "Duplicating a Project", url: "/docs/duplicate-project" },
         { title: "Public Projects", url: "/docs/public-projects" },
@@ -83,7 +87,7 @@ module DocsHelper
         { title: "Handling Dependencies", url: "/docs/dependencies" },
         { title: "Managing Invalid Stories", url: "/docs/invalid-stories" },
         { title: "Organizing Releases", url: "/docs/releases" },
-        { title: "Velocity", url: "/docs/velocity" }
+        { title: "Understanding Velocity", url: "/docs/understanding-velocity" }
       ],
 
       "Search & Filters" => [
@@ -99,7 +103,6 @@ module DocsHelper
         { title: "Login Basics", url: "/docs/accounts/login-basics" },
         { title: "Your Password", url: "/docs/accounts/password" },
         { title: "Two-Factor Authentication", url: "/docs/accounts/2fa" },
-        { title: "Merging Logins", url: "/docs/accounts/merging-logins" },
         { title: "Updating Name, Email, Initials", url: "/docs/accounts/updating-profile" },
         { title: "Updating Profile Photo", url: "/docs/accounts/profile-photo" },
         { title: "Email and Password", url: "/docs/accounts/email-password" },
@@ -208,19 +211,9 @@ module DocsHelper
       ],
 
       "Privacy & Security" => [
-        { title: "Two-factor authentication", url: "/docs/cloud/2fa" },
         { title: "Deleting your Iterator login", url: "/docs/cloud/delete-login" },
         { title: "Transferring account ownership", url: "/docs/cloud/transfer-ownership" },
-        { title: "Merging multiple logins", url: "/docs/cloud/merge-logins" },
-        { title: "Deleting an account", url: "/docs/cloud/delete-account" }
-      ],
-
-      "Help & Troubleshooting" => [
-        { title: "Login basics", url: "/docs/cloud/login" },
-        { title: "Your password", url: "/docs/cloud/password" },
-        { title: "Updating your profile", url: "/docs/cloud/profile" },
-        { title: "Updating profile photo", url: "/docs/cloud/profile-photo" },
-        { title: "API token", url: "/docs/cloud/api-token" }
+        { title: "Merging multiple logins", url: "/docs/cloud/merge-logins" }
       ]
     }
   end
@@ -228,8 +221,9 @@ module DocsHelper
   def doc_guide_pages
     [
       { title: "Overview", url: "/docs/guides", active: current_page.url == "/docs/guides" || current_page.url == "/docs/guides/" },
-      { title: "Deploying with Docker", url: "/docs/guides/quick-start", active: current_page.url.include?("/quick-start") },
-      { title: "Deploying with Kamal", url: "/docs/guides/best-practices", active: current_page.url.include?("/best-practices") }
+      { title: "Migrating from a Third-Party", url: "/docs/guides/migrating-from-third-party"},
+      { title: "Deploying with Docker", url: "/docs/guides/deploying-with-docker"},
+      { title: "Deploying with Kamal", url: "/docs/guides/deploying-with-kamal"}
     ]
   end
 

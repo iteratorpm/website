@@ -62,7 +62,7 @@ title: Changelog - Iterator
             / Article content
             .prose.prose-lg.max-w-none.prose-slate
               .bg-gradient-to-br.from-slate-50.to-gray-50.border-2.border-slate-200.p-8.mb-8
-                = article.body
+                = article.data.description || article.body
 
             / Action section
             .pt-8.border-t-2.border-slate-200

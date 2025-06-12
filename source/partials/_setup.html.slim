@@ -68,8 +68,12 @@ section.bg-gray-50.border-t-4.border-b-4.border-black.py-20
               .w-3.h-3.bg-red-400.border.border-black.rounded-full
               .w-3.h-3.bg-yellow-400.border.border-black.rounded-full
               .w-3.h-3.bg-green-400.border.border-black.rounded-full
-            .mb-2.text-gray-400 # One command deployment
-            .text-green-300 $ docker run -p 3000:3000 iteratorpm/iterator:latest
+            .mb-2.text-gray-400
+              | # One command deployment
+              .text-green-300
+                |> $ docker run -p 3000:3000
+                |> -v ./iterator-db:/usr/src/app/storage
+                | iteratorpm/iterator:latest
           .bg-gray-100.border-2.border-black.p-4.mb-6.relative
             ul.text-sm.text-gray-700.space-y-2
               li • Complete data ownership
