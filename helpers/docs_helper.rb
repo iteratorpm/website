@@ -189,12 +189,17 @@ module DocsHelper
   end
 
   def doc_api_pages
-    [
+    {
+      "Getting Started" => [
       { title: "Overview", url: "/docs/api", active: current_page.url == "/docs/api" || current_page.url == "/docs/api/" },
-      { title: "Authentication", url: "/docs/api/authentication", active: current_page.url.include?("/authentication") },
-      { title: "Endpoints", url: "/docs/api/endpoints", active: current_page.url.include?("/endpoints") },
-      { title: "Rate Limits", url: "/docs/api/rate-limits", active: current_page.url.include?("/rate-limits") }
-    ]
+      ],
+
+      "Endpoints" => [
+        { title: "Authentication", url: "/docs/api/authentication", active: current_page.url.include?("/authentication") },
+        { title: "Endpoints", url: "/docs/api/endpoints", active: current_page.url.include?("/endpoints") },
+        { title: "Rate Limits", url: "/docs/api/rate-limits", active: current_page.url.include?("/rate-limits") }
+      ]
+    }
   end
 
   def doc_cloud_pages
@@ -219,12 +224,16 @@ module DocsHelper
   end
 
   def doc_guide_pages
-    [
-      { title: "Overview", url: "/docs/guides", active: current_page.url == "/docs/guides" || current_page.url == "/docs/guides/" },
-      { title: "Migrating from a Third-Party", url: "/docs/guides/migrating-from-third-party"},
-      { title: "Deploying with Docker", url: "/docs/guides/deploying-with-docker"},
-      { title: "Deploying with Kamal", url: "/docs/guides/deploying-with-kamal"}
-    ]
+    {
+      "Getting Started" => [
+        { title: "Overview", url: "/docs/guides", active: current_page.url == "/docs/guides" || current_page.url == "/docs/guides/" },
+        { title: "Migrating from a Third-Party", url: "/docs/guides/migrating-from-third-party"},
+      ],
+      "Hosting" => [
+        { title: "Deploying with Docker", url: "/docs/guides/deploying-with-docker"},
+        { title: "Deploying with Kamal", url: "/docs/guides/deploying-with-kamal"}
+      ]
+    }
   end
 
   def doc_nav_items

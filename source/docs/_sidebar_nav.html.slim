@@ -14,14 +14,16 @@
 
   - elsif current_page.url.start_with?("/docs/api")
     / API section
-    h3.font-bold.mb-4.text-lg.border-b-2.border-black.pb-2 API Reference
-    ul.mb-6
-      - doc_api_pages.each do |page|
-        li
-          = link_to page[:url], class: "block px-3 py-2 rounded border-2 transition-colors #{is_active ? 'bg-black text-white border-black' : 'border-transparent hover:border-black hover:bg-gray-50'}"
-            = page[:title]
-            - if page[:coming_soon]
-              = image_tag "person-digging.svg", class: "inline-flex ml-2"
+    - doc_api_pages.each do |section, pages|
+      h3.font-bold.mb-4.text-lg.border-b-2.border-black.pb-2= section
+      ul.mb-6
+        - pages.each do |page|
+          - is_active = current_page.url == page[:url] || current_page.url == "#{page[:url]}/"
+          li
+            = link_to page[:url], class: "block px-3 py-2 rounded border-2 transition-colors #{is_active ? 'bg-black text-white border-black' : 'border-transparent hover:border-black hover:bg-gray-50'}"
+              = page[:title]
+              - if page[:coming_soon]
+                = image_tag "person-digging.svg", class: "inline-flex ml-2"
 
   - elsif current_page.url.start_with?("/docs/analytics")
     / Analytics section
@@ -63,12 +65,13 @@
                 = image_tag "person-digging.svg", class: "inline-flex ml-2"
 
   - elsif current_page.url.start_with?("/docs/guides")
-    / Guides section
-    h3.font-bold.mb-4.text-lg.border-b-2.border-black.pb-2 Guides
-    ul.mb-6
-      - doc_guide_pages.each do |page|
-        li
-          = link_to page[:url], class: "block px-3 py-2 rounded border-2 transition-colors #{is_active ? 'bg-black text-white border-black' : 'border-transparent hover:border-black hover:bg-gray-50'}"
-            = page[:title]
-            - if page[:coming_soon]
-              = image_tag "person-digging.svg", class: "inline-flex ml-2"
+    - doc_guide_pages.each do |section, pages|
+      h3.font-bold.mb-4.text-lg.border-b-2.border-black.pb-2= section
+      ul.mb-6
+        - pages.each do |page|
+          - is_active = current_page.url == page[:url] || current_page.url == "#{page[:url]}/"
+          li
+            = link_to page[:url], class: "block px-3 py-2 rounded border-2 transition-colors #{is_active ? 'bg-black text-white border-black' : 'border-transparent hover:border-black hover:bg-gray-50'}"
+              = page[:title]
+              - if page[:coming_soon]
+                = image_tag "person-digging.svg", class: "inline-flex ml-2"
