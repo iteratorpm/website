@@ -1,6 +1,7 @@
 ---
 title: "Creating a Project"
 section: "Getting Started"
+description: If you were invited to an existing project in Iterator, clicking the link in your invitation email will take you directly to that project in the app.
 layout: docs
 prev_page:
   title: "Installation"

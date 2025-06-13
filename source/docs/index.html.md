@@ -1,6 +1,7 @@
 ---
 title: "Overview"
 section: "Getting Started"
+description: Iterator is an open-source, beta-stage project planning tool designed to help software development teams build realistic expectations around timelines and deliverables. While in beta, Iterator is completely free to use.
 layout: docs
 next_page:
   title: "Installation"

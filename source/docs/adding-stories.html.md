@@ -1,6 +1,7 @@
 ---
 title: "Adding Stories"
 section: "Getting Started"
+description: You can add stories to the Current, Backlog, Icebox, or Epic Stories panels in Iterator.
 layout: docs
 prev_page:
   title: "Creating a Project"

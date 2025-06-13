@@ -1,6 +1,7 @@
 ---
 title: "Installation"
 section: "Getting Started"
+description: Hosting Rails applications requires significant expertise. Even with existing Postgres, Ruby installations, you still need to manage
 layout: docs
 prev_page:
   title: "Overview"

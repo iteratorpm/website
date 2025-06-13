@@ -3,26 +3,30 @@ html lang="en"
   head
     meta charset="UTF-8"
     meta name="viewport" content="width=device-width, initial-scale=1.0"
-    title= current_page.data.title || "Iterator - Modern Agile Project Management"
+    - title = current_page.data.title || "Iterator - Modern Agile Project Management"
+    - description = current_page.data.description || "Iterator is a modern Agile project management tool inspired by Pivotal Tracker. Streamline your team’s story-driven development process with speed and clarity."
+
+    title= title
 
     / SEO Meta Tags
-    meta name="description" content="Iterator is a modern Agile project management tool inspired by Pivotal Tracker. Streamline your team’s story-driven development process with speed and clarity."
+    meta name="description" content=description
+
     meta name="keywords" content="Agile project management, story-driven development, Pivotal Tracker alternative, agile software tools, team collaboration, modern PM tool, sprint planning, product management, agile workflow, software development"
 
     meta name="robots" content="index, follow"
     = feed_tag :atom, "/feed.xml", title: "Atom Feed"
 
     / Open Graph (Facebook, LinkedIn)
-    meta property="og:title" content="Iterator – Modern Agile Project Management"
-    meta property="og:description" content="Story-driven Agile project management built on a proven methodology. Get clarity and control over your software development."
+    meta property="og:title" content=title
+    meta property="og:description" content=description
     meta property="og:type" content="website"
     meta property="og:url" content="https://iteratorpm.com"
     meta property="og:image" content="https://iteratorpm.com/og-image.jpg"
 
     / Twitter Card
     meta name="twitter:card" content="summary_large_image"
-    meta name="twitter:title" content="Iterator – Modern Agile Project Management"
-    meta name="twitter:description" content="Streamline your Agile development with Iterator, a fast and focused tool for modern teams."
+    meta name="twitter:title" content=title
+    meta name="twitter:description" content=description
     meta name="twitter:image" content="https://iteratorpm.com/twitter-card.jpg"
 
     script type="application/ld+json"

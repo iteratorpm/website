@@ -1,6 +1,7 @@
 ---
 title: "Workflow Overview"
 section: "Getting Started"
+description: "Iterator’s streamlined workflow helps teams deliver consistent value at a sustainable pace. Here’s a walkthrough of how a typical feature story moves through Iterator’s workflow."
 layout: docs
 prev_page:
   title: "Story States"
