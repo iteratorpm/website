@@ -30,7 +30,7 @@ module DocsHelper
         { title: "Organizing with Epics", url: "/docs/organizing-with-epics" },
         { title: "Managing Projects with Workspaces", url: "/docs/managing-projects-with-workspaces", coming_soon: true },
         { title: "Iterator Terminology", url: "/docs/iterator-terminology" },
-        { title: "Top Ten Tips", url: "/docs/top-ten-tips" }
+        { title: "Top Tips", url: "/docs/top-tips" }
       ],
 
       "Project Management" => [
@@ -95,11 +95,11 @@ module DocsHelper
         { title: "Advanced Search", url: "/docs/advanced-search" }
       ],
 
-      "Accounts & Access" => [
-        { title: "Understanding Accounts and Logins", url: "/docs/accounts/understanding-logins" },
-        { title: "Creating an Account", url: "/docs/accounts/creating" },
-        { title: "Managing Your Account", url: "/docs/accounts/managing" },
-        { title: "Deleting an Account", url: "/docs/accounts/deleting" },
+      "Organizations & Access" => [
+        { title: "Understanding Organizations and Logins", url: "/docs/understanding-organizations-and-logins" },
+        { title: "Creating an Organization", url: "/docs/creating-an-organization" },
+        { title: "Managing Your Organization", url: "/docs/managing-your-organization" },
+        { title: "Deleting an Organization", url: "/docs/deleting-an-organization" },
         { title: "Login Basics", url: "/docs/accounts/login-basics" },
         { title: "Your Password", url: "/docs/accounts/password" },
         { title: "Two-Factor Authentication", url: "/docs/accounts/2fa" },
@@ -110,11 +110,11 @@ module DocsHelper
         { title: "Project Member Roles", url: "/docs/accounts/project-roles" },
         { title: "Adding/Removing Project Members", url: "/docs/accounts/manage-project-members" },
         { title: "Changing Project Role", url: "/docs/accounts/change-project-role" },
-        { title: "Account Member Roles", url: "/docs/accounts/account-roles" },
-        { title: "Adding/Removing Account Members", url: "/docs/accounts/manage-account-members" },
-        { title: "Changing Account Role", url: "/docs/accounts/change-account-role" },
+        { title: "Organiation Member Roles", url: "/docs/accounts/account-roles" },
+        { title: "Adding/Removing Organiation Members", url: "/docs/accounts/manage-account-members" },
+        { title: "Changing Organiation Role", url: "/docs/accounts/change-account-role" },
         { title: "Managing Collaborators", url: "/docs/accounts/collaborators" },
-        { title: "Account Members Report", url: "/docs/accounts/account-members-report" }
+        { title: "Organiation Members Report", url: "/docs/accounts/account-members-report" }
       ],
 
       "Import / Export" => [
@@ -211,8 +211,9 @@ module DocsHelper
 
       "Billing & Subscriptions" => [
         { title: "Other free options", url: "/docs/cloud/free-options" },
+        { title: "Separate Email for Billing", url: "/docs/cloud/separate-email-for-billing" },
         { title: "Receipts & Invoices", url: "/docs/cloud/receipts" },
-        { title: "Refunds", url: "/docs/cloud/refunds" }
+        { title: "Canceling your Subscription", url: "/docs/cloud/canceling-your-subscription" }
       ],
 
       "Privacy & Security" => [
