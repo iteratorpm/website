@@ -20,7 +20,6 @@ module DocsHelper
     {
       "Getting Started" => [
         { title: "Overview", url: "/docs", active: current_page.url == "/docs" || current_page.url == "/docs/" },
-        { title: "Installation", url: "/docs/installation"},
         { title: "Creating a Project", url: "/docs/creating-a-project" },
         { title: "Adding Stories", url: "/docs/adding-stories" },
         { title: "Working with Stories", url: "/docs/working-with-stories" },
@@ -231,8 +230,7 @@ module DocsHelper
         { title: "Migrating from a Third-Party", url: "/docs/guides/migrating-from-third-party"},
       ],
       "Hosting" => [
-        { title: "Deploying with Docker", url: "/docs/guides/deploying-with-docker"},
-        { title: "Deploying with Kamal", url: "/docs/guides/deploying-with-kamal"}
+        { title: "Installation", url: "/docs/guides/installation"}
       ]
     }
   end

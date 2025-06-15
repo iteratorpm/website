@@ -4,11 +4,8 @@ section: "Getting Started"
 description: Hosting Rails applications requires significant expertise. Even with existing Postgres, Ruby installations, you still need to manage
 layout: docs
 prev_page:
-  title: "Overview"
-  url: "/docs"
-next_page:
-  title: "Creating a Project"
-  url: "/docs/creating-a-project"
+  title: "Migrating from a Third-Party"
+  url: "/docs/guides/migrating-from-third-party"
 ---
 
 ## We Only Officially Support Docker
@@ -92,7 +89,7 @@ When creating DKIM records, some hosts automatically append your domain. Verify 
 
 ### 1. Docker Container
 
-#### SQLite DB
+#### SQLite
 
 For a quick setup SQlite works fine for a low amount of users.
 
