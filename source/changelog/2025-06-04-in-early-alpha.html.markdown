@@ -1,8 +1,8 @@
 ---
 
-title: "In Beta"
+title: "In Early Alpha"
 date: 2025-06-04 15:26 +0000
-description: Now officially in beta, be aware of bugs.
+description: Now officially in early alpha, be aware of bugs.
 tags: 
 
 ---
