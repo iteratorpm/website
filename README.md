@@ -1,6 +1,6 @@
 # Iterator Marketing Website
 
-This is the source code for the Iterator website. The Iterator app source code is [here](https://github.com/iterator-pm/iterator).
+This is the source code for the Iterator website. The Iterator app source code is [here](https://github.com/iteratorpm/iterator).
 
 ## Development
 

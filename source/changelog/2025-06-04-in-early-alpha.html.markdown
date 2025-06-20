@@ -12,4 +12,4 @@ Many features are still a work in progress.
 The focus is to implement all features of Pivotal Tracker on the projects page. Afterwards other important features like integrations and analytics will be worked on.
 
 
-Report any bugs [here](https://github.com/iterator-pm/iterator).
+Report any bugs [here](https://github.com/iteratorpm/iterator).
