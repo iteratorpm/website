@@ -38,7 +38,7 @@ module DocsHelper
         { title: "Showing All Projects", url: "/docs/showing-all-projects" },
         { title: "Changing Project Settings", url: "/docs/project-settings" },
         { title: "Project Profile", url: "/docs/project-profile" },
-        { title: "Moving Projects Between Accounts", url: "/docs/move-project" },
+        { title: "Moving Projects Between Organizations", url: "/docs/move-project" },
         { title: "Iteration & Start Dates", url: "/docs/iteration-start" },
         { title: "Time Zones", url: "/docs/time-zones" },
         { title: "Manual vs Auto Planning", url: "/docs/manual-vs-auto" },
@@ -182,7 +182,7 @@ module DocsHelper
         { title: "Burndown Chart", url: "/docs/analytics/burndown" },
         { title: "Story Activity report", url: "/docs/analytics/story-activity" },
         { title: "Projects report", url: "/docs/analytics/projects" },
-        { title: "Account members report", url: "/docs/analytics/account-members" }
+        { title: "Organization members report", url: "/docs/analytics/organization-members" }
       ]
     }
   end
@@ -217,7 +217,7 @@ module DocsHelper
 
       "Privacy & Security" => [
         { title: "Deleting your Iterator login", url: "/docs/cloud/delete-login" },
-        { title: "Transferring account ownership", url: "/docs/cloud/transfer-ownership" },
+        { title: "Transferring organization ownership", url: "/docs/cloud/transfer-ownership" },
         { title: "Merging multiple logins", url: "/docs/cloud/merge-logins" }
       ]
     }
